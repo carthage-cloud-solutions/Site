@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carthage Cloud Solutions - About Us</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Copy all styles from index.html up to hero section */
+        :root {
+            --deep-blue: #0A3D5E;
+            --ocean-blue: #1E81BB;
+            --light-blue: #E6F3FF;
+            --soft-gray: #F4F7FA;
+            --dark-text: #2C3E50;
+            --white: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--dark-text);
+        }
+
+        .container {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 0 30px;
+        }
+
+        /* Header styles same as index.html */
+        header {
+            background: white;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 30px;
+        }
+
+        .logo img {
+            height: 50px;
+            width: auto;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 40px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: var(--deep-blue);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover,
+        nav ul li a.active {
+            color: var(--ocean-blue);
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 14px 32px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary {
+            background: var(--ocean-blue);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: var(--deep-blue);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(30, 129, 187, 0.3);
+        }
+
+        /* Page Header */
+        .page-header {
+            background: linear-gradient(135deg, var(--deep-blue) 0%, var(--ocean-blue) 100%);
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .page-header h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        /* About Content */
+        .about-content {
+            padding: 90px 0;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: start;
+        }
+
+        .about-text h2 {
+            color: var(--deep-blue);
+            font-size: 2rem;
+            margin-bottom: 30px;
+        }
+
+        .about-text p {
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        .expertise-list {
+            margin-top: 30px;
+        }
+
+        .expertise-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+            padding: 15px;
+            background: var(--soft-gray);
+            border-radius: 10px;
+        }
+
+        .expertise-item i {
+            font-size: 1.5rem;
+            color: var(--ocean-blue);
+            width: 40px;
+        }
+
+        /* Team Section */
+        .team-section {
+            background: var(--soft-gray);
+            padding: 90px 0;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            color: var(--deep-blue);
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .team-member {
+            background: white;
+            padding: 30px;
+            border-radius: 16px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.03);
+        }
+
+        .member-icon {
+            width: 100px;
+            height: 100px;
+            background: var(--light-blue);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+        }
+
+        .member-icon i {
+            font-size: 3rem;
+            color: var(--ocean-blue);
+        }
+
+        .member-cert {
+            display: inline-block;
+            background: var(--light-blue);
+            color: var(--deep-blue);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            margin: 10px 0;
+        }
+
+        /* Certifications Section */
+        .certs-section {
+            padding: 90px 0;
+        }
+
+        .certs-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            text-align: center;
+        }
+
+        .cert-card {
+            padding: 30px;
+            background: var(--soft-gray);
+            border-radius: 12px;
+        }
+
+        .cert-card i {
+            font-size: 3rem;
+            color: var(--ocean-blue);
+            margin-bottom: 15px;
+        }
+
+        .cert-card h4 {
+            color: var(--deep-blue);
+            margin-bottom: 10px;
+        }
+
+        /* Footer same as index.html */
+        footer {
+            background: var(--deep-blue);
+            color: white;
+            padding: 60px 0 30px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            margin-bottom: 25px;
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 12px;
+        }
+
+        .footer-col ul li a {
+            color: #cbd5e0;
+            text-decoration: none;
+        }
+
+        .footer-col ul li a:hover {
+            color: white;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+
+        @media (max-width: 768px) {
+            .about-grid,
+            .team-grid,
+            .certs-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="logo-carthage.png" alt="Carthage Cloud Solutions">
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html" class="active">About</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="page-header">
+            <div class="container">
+                <h1>About Carthage Cloud Solutions</h1>
+                <p>Meet the team behind your IT success</p>
+            </div>
+        </section>
+
+        <section class="about-content">
+            <div class="container">
+                <div class="about-grid">
+                    <div class="about-text">
+                        <h2>Who We Are</h2>
+                        <p>Founded by a team of certified experts, Carthage Cloud Solutions brings together deep technical expertise across the Microsoft, Cisco, and Fortinet ecosystems. We're not just consultants – we're architects of digital transformation.</p>
+                        <p>Our mission is simple: deliver enterprise-grade IT solutions that are secure, scalable, and innovative. With 24/7 SOC monitoring and a team of certified professionals, we're your trusted partner in navigating the complex world of cloud, security, and networking.</p>
+                        
+                        <div class="expertise-list">
+                            <div class="expertise-item">
+                                <i class="fab fa-microsoft"></i>
+                                <div>
+                                    <strong>Microsoft Certified Experts</strong>
+                                    <p>Azure, M365, Power Platform, Security</p>
+                                </div>
+                            </div>
+                            <div class="expertise-item">
+                                <i class="fas fa-shield-alt"></i>
+                                <div>
+                                    <strong>Fortinet Security Specialists</strong>
+                                    <p>NSE Certified, FortiGate, SOC</p>
+                                </div>
+                            </div>
+                            <div class="expertise-item">
+                                <i class="fas fa-network-wired"></i>
+                                <div>
+                                    <strong>Cisco Network Architects</strong>
+                                    <p>CCNP, Meraki, Enterprise Networking</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="background: var(--soft-gray); padding: 40px; border-radius: 16px;">
+                        <h3 style="color: var(--deep-blue); margin-bottom: 30px;">Our Expertise at a Glance</h3>
+                        <div style="margin-bottom: 20px;">
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 5px;">
+                                <span>Microsoft Azure</span>
+                                <span>Expert</span>
+                            </div>
+                            <div style="height: 10px; background: #ddd; border-radius: 5px;">
+                                <div style="width: 100%; height: 100%; background: var(--ocean-blue); border-radius: 5px;"></div>
+                            </div>
+                        </div>
+                        <div style="margin-bottom: 20px;">
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 5px;">
+                                <span>Cybersecurity</span>
+                                <span>Expert</span>
+                            </div>
+                            <div style="height: 10px; background: #ddd; border-radius: 5px;">
+                                <div style="width: 100%; height: 100%; background: var(--ocean-blue); border-radius: 5px;"></div>
+                            </div>
+                        </div>
+                        <div style="margin-bottom: 20px;">
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 5px;">
+                                <span>Cisco Networking</span>
+                                <span>Advanced</span>
+                            </div>
+                            <div style="height: 10px; background: #ddd; border-radius: 5px;">
+                                <div style="width: 95%; height: 100%; background: var(--ocean-blue); border-radius: 5px;"></div>
+                            </div>
+                        </div>
+                        <div style="margin-bottom: 20px;">
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 5px;">
+                                <span>Automation & RPA</span>
+                                <span>Advanced</span>
+                            </div>
+                            <div style="height: 10px; background: #ddd; border-radius: 5px;">
+                                <div style="width: 90%; height: 100%; background: var(--ocean-blue); border-radius: 5px;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="team-section">
+            <div class="container">
+                <h2 class="section-title">Our Certified Team</h2>
+                <div class="team-grid">
+                    <div class="team-member">
+                        <div class="member-icon">
+                            <i class="fas fa-user-tie"></i>
+                        </div>
+                        <h3>Cloud Architects</h3>
+                        <span class="member-cert">Azure Expert</span>
+                        <p>Microsoft certified architects designing scalable cloud solutions</p>
+                    </div>
+                    <div class="team-member">
+                        <div class="member-icon">
+                            <i class="fas fa-user-shield"></i>
+                        </div>
+                        <h3>Security Experts</h3>
+                        <span class="member-cert">Fortinet NSE</span>
+                        <p>24/7 SOC analysts and security specialists</p>
+                    </div>
+                    <div class="team-member">
+                        <div class="member-icon">
+                            <i class="fas fa-user-nurse"></i>
+                        </div>
+                        <h3>Network Engineers</h3>
+                        <span class="member-cert">Cisco CCNP</span>
+                        <p>Cisco certified networking professionals</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="certs-section">
+            <div class="container">
+                <h2 class="section-title">Our Certifications</h2>
+                <div class="certs-grid">
+                    <div class="cert-card">
+                        <i class="fab fa-microsoft"></i>
+                        <h4>Microsoft</h4>
+                        <p>Azure, M365, Security, Power Platform</p>
+                    </div>
+                    <div class="cert-card">
+                        <i class="fas fa-shield-alt"></i>
+                        <h4>Fortinet</h4>
+                        <p>NSE 4, NSE 5, NSE 7</p>
+                    </div>
+                    <div class="cert-card">
+                        <i class="fas fa-network-wired"></i>
+                        <h4>Cisco</h4>
+                        <p>CCNP, Meraki, SD-WAN</p>
+                    </div>
+                    <div class="cert-card">
+                        <i class="fas fa-cloud"></i>
+                        <h4>Azure Stack</h4>
+                        <p>HCI, Hybrid, Arc</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <h4>Carthage Cloud Solutions</h4>
+                    <p>Your trusted partner for cloud, security, and digital transformation.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="services.html#cloud">Cloud & Azure</a></li>
+                        <li><a href="services.html#security">Cybersecurity</a></li>
+                        <li><a href="services.html#m365">Microsoft 365</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li>contact@carthagecloud.com</li>
+                        <li>Tunis, Tunisia</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2024 Carthage Cloud Solutions. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
