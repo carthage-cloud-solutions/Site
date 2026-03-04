@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carthage Cloud Solutions - Our Services</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Same root variables and header styles as before */
+        :root {
+            --deep-blue: #0A3D5E;
+            --ocean-blue: #1E81BB;
+            --light-blue: #E6F3FF;
+            --soft-gray: #F4F7FA;
+            --dark-text: #2C3E50;
+            --white: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--dark-text);
+        }
+
+        .container {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 0 30px;
+        }
+
+        /* Header */
+        header {
+            background: white;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 30px;
+        }
+
+        .logo img {
+            height: 50px;
+            width: auto;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 40px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: var(--deep-blue);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover,
+        nav ul li a.active {
+            color: var(--ocean-blue);
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 14px 32px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary {
+            background: var(--ocean-blue);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: var(--deep-blue);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(30, 129, 187, 0.3);
+        }
+
+        /* Page Header */
+        .page-header {
+            background: linear-gradient(135deg, var(--deep-blue) 0%, var(--ocean-blue) 100%);
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .page-header h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Services Full */
+        .services-full {
+            padding: 90px 0;
+        }
+
+        .service-category {
+            margin-bottom: 80px;
+            scroll-margin-top: 100px;
+        }
+
+        .service-category h2 {
+            color: var(--deep-blue);
+            font-size: 2.2rem;
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 3px solid var(--light-blue);
+        }
+
+        .service-detail-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 40px;
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+        }
+
+        .service-features h3 {
+            color: var(--deep-blue);
+            font-size: 1.5rem;
+            margin-bottom: 25px;
+        }
+
+        .feature-list {
+            list-style: none;
+        }
+
+        .feature-list li {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 15px;
+            padding: 10px;
+            background: var(--soft-gray);
+            border-radius: 8px;
+        }
+
+        .feature-list li i {
+            color: var(--ocean-blue);
+            font-size: 1.2rem;
+        }
+
+        .projects-showcase {
+            background: var(--soft-gray);
+            padding: 30px;
+            border-radius: 16px;
+        }
+
+        .projects-showcase h3 {
+            color: var(--deep-blue);
+            margin-bottom: 20px;
+        }
+
+        .project-item {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        .project-item h4 {
+            color: var(--deep-blue);
+            margin-bottom: 10px;
+        }
+
+        .project-tag {
+            display: inline-block;
+            background: var(--light-blue);
+            color: var(--deep-blue);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            margin-top: 10px;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--deep-blue);
+            color: white;
+            padding: 60px 0 30px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            margin-bottom: 25px;
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 12px;
+        }
+
+        .footer-col ul li a {
+            color: #cbd5e0;
+            text-decoration: none;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+
+        @media (max-width: 768px) {
+            .service-detail-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="logo-carthage.png" alt="Carthage Cloud Solutions">
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html" class="active">Services</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="page-header">
+            <div class="container">
+                <h1>Our Services</h1>
+                <p>Comprehensive IT solutions backed by certified expertise</p>
+            </div>
+        </section>
+
+        <section class="services-full">
+            <div class="container">
+                <!-- Service 1: Cloud & Infrastructure -->
+                <div id="cloud" class="service-category">
+                    <h2>☁️ Cloud & Hybrid Infrastructure</h2>
+                    <div class="service-detail-grid">
+                        <div class="service-features">
+                            <h3>What we offer:</h3>
+                            <ul class="feature-list">
+                                <li><i class="fas fa-check-circle"></i> Microsoft Azure Architecture & Deployment</li>
+                                <li><i class="fas fa-check-circle"></i> Azure Stack HCI (Hybrid Cloud Solutions)</li>
+                                <li><i class="fas fa-check-circle"></i> Windows Server & Active Directory</li>
+                                <li><i class="fas fa-check-circle"></i> Cloud Migration & Modernization</li>
+                                <li><i class="fas fa-check-circle"></i> Disaster Recovery & Business Continuity</li>
+                                <li><i class="fas fa-check-circle"></i> Azure Arc & Hybrid Management</li>
+                            </ul>
+                        </div>
+                        <div class="projects-showcase">
+                            <h3>Innovative Projects</h3>
+                            <div class="project-item">
+                                <h4>Azure HCI for Healthcare</h4>
+                                <p>Implemented hybrid cloud infrastructure for a major hospital, ensuring 99.9% uptime and DR</p>
+                                <span class="project-tag">Azure Stack HCI</span>
+                            </div>
+                            <div class="project-item">
+                                <h4>Multi-Cloud Migration</h4>
+                                <p>Migrated 500+ servers to Azure for a financial institution</p>
+                                <span class="project-tag">Azure Migrate</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Service 2: Cybersecurity & SOC -->
+                <div id="security" class="service-category">
+                    <h2>🛡️ Cybersecurity & SOC 24/7</h2>
+                    <div class="service-detail-grid">
+                        <div class="service-features">
+                            <h3>What we offer:</h3>
+                            <ul class="feature-list">
+                                <li><i class="fas fa-check-circle"></i> Microsoft Sentinel SIEM & XDR</li>
+                                <li><i class="fas fa-check-circle"></i> Fortinet FortiGate & Security Fabric</li>
+                                <li><i class="fas fa-check-circle"></i> 24/7 SOC Monitoring & Incident Response</li>
+                                <li><i class="fas fa-check-circle"></i> Microsoft Defender Suite (Endpoint, Identity, Cloud)</li>
+                                <li><i class="fas fa-check-circle"></i> Vulnerability Management</li>
+                                <li><i class="fas fa-check-circle"></i> Security Audits & Compliance</li>
+                            </ul>
+                        </div>
+                        <div class="projects-showcase">
+                            <h3>Innovative Projects</h3>
+                            <div class="project-item">
+                                <h4>Banking SOC Implementation</h4>
+                                <p>Deployed Sentinel with automated threat response for a regional bank</p>
+                                <span class="project-tag">Microsoft Sentinel</span>
+                            </div>
+                            <div class="project-item">
+                                <h4>Fortinet NGFW Deployment</h4>
+                                <p>Enterprise-wide FortiGate deployment with SD-WAN</p>
+                                <span class="project-tag">Fortinet</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Service 3: Microsoft 365 & Productivity -->
+                <div id="m365" class="service-category">
+                    <h2>💼 Microsoft 365 & Collaboration</h2>
+                    <div class="service-detail-grid">
+                        <div class="service-features">
+                            <h3>What we offer:</h3>
+                            <ul class="feature-list">
+                                <li><i class="fas fa-check-circle"></i> M365 Deployment & Migration</li>
+                                <li><i class="fas fa-check-circle"></i> Advanced Troubleshooting & Support</li>
+                                <li><i class="fas fa-check-circle"></i> Identity & Access Management (Entra ID)</li>
+                                <li><i class="fas fa-check-circle"></i> Teams & SharePoint Solutions</li>
+                                <li><i class="fas fa-check-circle"></i> Security & Compliance Setup</li>
+                                <li><i class="fas fa-check-circle"></i> Exchange Online & Email Security</li>
+                            </ul>
+                        </div>
+                        <div class="projects-showcase">
+                            <h3>Innovative Projects</h3>
+                            <div class="project-item">
+                                <h4>M365 Migration (2000 Users)</h4>
+                                <p>Seamless migration from on-premise to M365 for a multinational</p>
+                                <span class="project-tag">M365</span>
+                            </div>
+                            <div class="project-item">
+                                <h4>Teams Enterprise Voice</h4>
+                                <p>Full Teams Phone system implementation</p>
+                                <span class="project-tag">Teams Voice</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Service 4: Cisco Networking -->
+                <div id="network" class="service-category">
+                    <h2>🌐 Cisco Networking & Connectivity</h2>
+                    <div class="service-detail-grid">
+                        <div class="service-features">
+                            <h3>What we offer:</h3>
+                            <ul class="feature-list">
+                                <li><i class="fas fa-check-circle"></i> Cisco Enterprise Infrastructure</li>
+                                <li><i class="fas fa-check-circle"></i> Meraki WiFi & SD-WAN Solutions</li>
+                                <li><i class="fas fa-check-circle"></i> Enterprise Identity (Cisco ISE)</li>
+                                <li><i class="fas fa-check-circle"></i> Routing & Switching</li>
+                                <li><i class="fas fa-check-circle"></i> Network Security (Firepower, ASA)</li>
+                                <li><i class="fas fa-check-circle"></i> Cisco DNA Center</li>
+                            </ul>
+                        </div>
+                        <div class="projects-showcase">
+                            <h3>Innovative Projects</h3>
+                            <div class="project-item">
+                                <h4>Campus WiFi Overhaul</h4>
+                                <p>Full Meraki WiFi deployment for university campus</p>
+                                <span class="project-tag">Meraki</span>
+                            </div>
+                            <div class="project-item">
+                                <h4>SD-WAN Multi-site</h4>
+                                <p>Cisco SD-WAN implementation for retail chain</p>
+                                <span class="project-tag">SD-WAN</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Service 5: Automation & RPA -->
+                <div id="automation" class="service-category">
+                    <h2>🤖 Automation & Power Platform</h2>
+                    <div class="service-detail-grid">
+                        <div class="service-features">
+                            <h3>What we offer:</h3>
+                            <ul class="feature-list">
+                                <li><i class="fas fa-check-circle"></i> Power Automate (RPA)</li>
+                                <li><i class="fas fa-check-circle"></i> Power Apps Development</li>
+                                <li><i class="fas fa-check-circle"></i> Power BI Analytics & Dashboards</li>
+                                <li><i class="fas fa-check-circle"></i> Process Optimization</li>
+                                <li><i class="fas fa-check-circle"></i> AI Builder & Cognitive Services</li>
+                                <li><i class="fas fa-check-circle"></i> Custom Connectors</li>
+                            </ul>
+                        </div>
+                        <div class="projects-showcase">
+                            <h3>Innovative Projects</h3>
+                            <div class="project-item">
+                                <h4>Invoice Automation RPA</h4>
+                                <p>Automated AP process saving 30 hours/week</p>
+                                <span class="project-tag">Power Automate</span>
+                            </div>
+                            <div class="project-item">
+                                <h4>Executive Dashboard</h4>
+                                <p>Real-time Power BI dashboard for C-suite</p>
+                                <span class="project-tag">Power BI</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Service 6: Azure Hybrid & HCI -->
+                <div id="hybrid" class="service-category">
+                    <h2>⚡ Azure Hybrid & HCI Solutions</h2>
+                    <div class="service-detail-grid">
+                        <div class="service-features">
+                            <h3>What we offer:</h3>
+                            <ul class="feature-list">
+                                <li><i class="fas fa-check-circle"></i> Azure Stack HCI</li>
+                                <li><i class="fas fa-check-circle"></i> Hybrid Connectivity (ExpressRoute, VPN)</li>
+                                <li><i class="fas fa-check-circle"></i> Azure Arc Management</li>
+                                <li><i class="fas fa-check-circle"></i> VDI Solutions (AVD)</li>
+                                <li><i class="fas fa-check-circle"></i> Azure File Sync</li>
+                                <li><i class="fas fa-check-circle"></i> Hybrid Identity</li>
+                            </ul>
+                        </div>
+                        <div class="projects-showcase">
+                            <h3>Innovative Projects</h3>
+                            <div class="project-item">
+                                <h4>HCI for Manufacturing</h4>
+                                <p>Azure Stack HCI with failover clustering</p>
+                                <span class="project-tag">HCI</span>
+                            </div>
+                            <div class="project-item">
+                                <h4>Azure Arc Implementation</h4>
+                                <p>Centralized management of hybrid resources</p>
+                                <span class="project-tag">Azure Arc</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <h4>Carthage Cloud Solutions</h4>
+                    <p>Your trusted partner for cloud, security, and digital transformation.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="services.html#cloud">Cloud & Azure</a></li>
+                        <li><a href="services.html#security">Cybersecurity</a></li>
+                        <li><a href="services.html#m365">Microsoft 365</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li>contact@carthagecloud.com</li>
+                        <li>Tunis, Tunisia</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2024 Carthage Cloud Solutions. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
