@@ -3,22 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Carthage Cloud Solutions - IT Excellence</title>
-    <!-- Font Awesome for icons -->
+    <title>Carthage Cloud Solutions - Home</title>
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
-        /* === ROOT VARIABLES - BLUE THEME === */
+        /* === ROOT VARIABLES === */
         :root {
             --deep-blue: #0A3D5E;
             --ocean-blue: #1E81BB;
             --light-blue: #E6F3FF;
-            --sky-blue: #4AA3DF;
             --soft-gray: #F4F7FA;
             --dark-text: #2C3E50;
             --white: #ffffff;
         }
 
-        /* === BASE STYLES === */
         * {
             margin: 0;
             padding: 0;
@@ -29,7 +27,6 @@
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
             line-height: 1.6;
             color: var(--dark-text);
-            background: var(--white);
         }
 
         .container {
@@ -38,62 +35,7 @@
             padding: 0 30px;
         }
 
-        /* === TYPOGRAPHY === */
-        h1, h2, h3, h4 {
-            font-weight: 700;
-            line-height: 1.2;
-        }
-
-        .section-title {
-            font-size: 2.5rem;
-            color: var(--deep-blue);
-            text-align: center;
-            margin-bottom: 1rem;
-        }
-
-        .section-subtitle {
-            font-size: 1.2rem;
-            color: #5a6b7a;
-            text-align: center;
-            max-width: 700px;
-            margin: 0 auto 4rem;
-        }
-
-        /* === BUTTONS === */
-        .btn {
-            display: inline-block;
-            padding: 14px 32px;
-            border-radius: 6px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            border: none;
-            cursor: pointer;
-        }
-
-        .btn-primary {
-            background: var(--ocean-blue);
-            color: white;
-        }
-
-        .btn-primary:hover {
-            background: var(--deep-blue);
-            transform: translateY(-2px);
-            box-shadow: 0 10px 25px rgba(30, 129, 187, 0.3);
-        }
-
-        .btn-outline {
-            background: transparent;
-            color: var(--deep-blue);
-            border: 2px solid var(--deep-blue);
-        }
-
-        .btn-outline:hover {
-            background: var(--deep-blue);
-            color: white;
-        }
-
-        /* === HEADER === */
+        /* === HEADER (SAME FOR ALL PAGES) === */
         header {
             background: white;
             box-shadow: 0 2px 20px rgba(0,0,0,0.05);
@@ -127,15 +69,36 @@
             transition: color 0.3s;
         }
 
-        nav ul li a:hover {
+        nav ul li a:hover,
+        nav ul li a.active {
             color: var(--ocean-blue);
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 14px 32px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary {
+            background: var(--ocean-blue);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: var(--deep-blue);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(30, 129, 187, 0.3);
         }
 
         /* === HERO SECTION === */
         .hero {
             background: linear-gradient(135deg, var(--deep-blue) 0%, var(--ocean-blue) 100%);
             color: white;
-            padding: 100px 0;
+            padding: 120px 0;
         }
 
         .hero-content {
@@ -173,172 +136,125 @@
             font-weight: 500;
         }
 
-        /* === ABOUT SECTION === */
-        .about {
+        /* === ABOUT PREVIEW === */
+        .about-preview {
             padding: 90px 0;
             background: var(--soft-gray);
         }
 
-        .about-grid {
+        .preview-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 60px;
             align-items: center;
         }
 
-        .about-text h2 {
+        .preview-text h2 {
             font-size: 2.3rem;
             color: var(--deep-blue);
             margin-bottom: 25px;
         }
 
-        .about-text p {
+        .preview-text p {
             font-size: 1.1rem;
-            color: #4a5568;
             margin-bottom: 25px;
         }
 
-        .cert-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 15px;
-            margin-top: 30px;
+        .cert-badges {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
         }
 
-        .cert-item {
+        .cert-badge {
             background: white;
-            padding: 10px 15px;
-            border-radius: 8px;
+            padding: 10px 20px;
+            border-radius: 40px;
             display: flex;
             align-items: center;
             gap: 10px;
             font-weight: 600;
             color: var(--deep-blue);
-            box-shadow: 0 2px 10px rgba(0,0,0,0.03);
         }
 
-        .cert-item i {
-            color: var(--ocean-blue);
-            font-size: 1.2rem;
-        }
-
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 25px;
-        }
-
-        .stat-card {
-            background: white;
-            padding: 30px;
-            border-radius: 12px;
-            text-align: center;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.03);
-        }
-
-        .stat-number {
-            font-size: 2.5rem;
-            font-weight: 700;
-            color: var(--ocean-blue);
-            margin-bottom: 5px;
-        }
-
-        .stat-label {
-            color: #64748b;
-            font-weight: 500;
-        }
-
-        /* === SERVICES SECTION === */
-        .services {
+        /* === SERVICES PREVIEW === */
+        .services-preview {
             padding: 90px 0;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            color: var(--deep-blue);
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+
+        .section-subtitle {
+            font-size: 1.2rem;
+            color: #5a6b7a;
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 4rem;
         }
 
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            grid-template-columns: repeat(3, 1fr);
             gap: 30px;
-            margin-top: 50px;
+            margin: 50px 0;
         }
 
         .service-card {
             background: white;
-            border-radius: 16px;
             padding: 35px;
+            border-radius: 16px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.03);
-            transition: all 0.3s ease;
             border: 1px solid rgba(30, 129, 187, 0.1);
+            transition: transform 0.3s;
         }
 
         .service-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 40px rgba(30, 129, 187, 0.1);
+            transform: translateY(-5px);
             border-color: var(--ocean-blue);
         }
 
         .service-icon {
-            width: 70px;
-            height: 70px;
+            width: 60px;
+            height: 60px;
             background: var(--light-blue);
-            border-radius: 14px;
+            border-radius: 12px;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-bottom: 25px;
+            margin-bottom: 20px;
         }
 
         .service-icon i {
-            font-size: 32px;
+            font-size: 28px;
             color: var(--ocean-blue);
         }
 
         .service-card h3 {
-            font-size: 1.6rem;
-            color: var(--deep-blue);
-            margin-bottom: 20px;
-        }
-
-        .service-tech {
-            list-style: none;
-            margin: 20px 0;
-        }
-
-        .service-tech li {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            margin-bottom: 12px;
-            color: #4a5568;
-        }
-
-        .service-tech li i {
-            color: var(--ocean-blue);
-            font-size: 0.9rem;
-        }
-
-        .service-projects {
-            margin-top: 25px;
-            padding-top: 20px;
-            border-top: 1px solid #e2e8f0;
-        }
-
-        .service-projects h4 {
+            font-size: 1.4rem;
             color: var(--deep-blue);
             margin-bottom: 15px;
-            font-size: 1.1rem;
         }
 
-        .project-tag {
-            display: inline-block;
-            background: var(--light-blue);
-            color: var(--deep-blue);
-            padding: 5px 15px;
-            border-radius: 20px;
-            font-size: 0.9rem;
-            margin: 0 5px 5px 0;
-            font-weight: 500;
+        .service-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--ocean-blue);
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 15px;
         }
 
-        /* === WHY US SECTION === */
+        .text-center {
+            text-align: center;
+        }
+
+        /* === WHY US === */
         .why-us {
             padding: 90px 0;
             background: linear-gradient(135deg, var(--deep-blue) 0%, #0E4D75 100%);
@@ -347,10 +263,6 @@
 
         .why-us .section-title {
             color: white;
-        }
-
-        .why-us .section-subtitle {
-            color: rgba(255,255,255,0.9);
         }
 
         .features-grid {
@@ -362,10 +274,9 @@
 
         .feature {
             text-align: center;
-            padding: 30px 20px;
+            padding: 30px;
             background: rgba(255,255,255,0.05);
             border-radius: 12px;
-            backdrop-filter: blur(10px);
         }
 
         .feature i {
@@ -374,86 +285,7 @@
             margin-bottom: 20px;
         }
 
-        .feature h4 {
-            font-size: 1.3rem;
-            margin-bottom: 10px;
-        }
-
-        /* === CONTACT SECTION === */
-        .contact {
-            padding: 90px 0;
-            background: var(--soft-gray);
-        }
-
-        .contact-container {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 50px;
-            background: white;
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.05);
-        }
-
-        .contact-info {
-            background: var(--deep-blue);
-            color: white;
-            padding: 50px;
-        }
-
-        .contact-info h3 {
-            font-size: 2rem;
-            margin-bottom: 30px;
-        }
-
-        .contact-details {
-            margin: 40px 0;
-        }
-
-        .contact-details p {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            margin-bottom: 20px;
-            font-size: 1.1rem;
-        }
-
-        .contact-details i {
-            width: 30px;
-            color: var(--light-blue);
-        }
-
-        .contact-form {
-            padding: 50px;
-        }
-
-        .form-group {
-            margin-bottom: 20px;
-        }
-
-        .form-group input,
-        .form-group textarea {
-            width: 100%;
-            padding: 15px;
-            border: 1px solid #e2e8f0;
-            border-radius: 8px;
-            font-size: 1rem;
-            transition: all 0.3s;
-        }
-
-        .form-group input:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-color: var(--ocean-blue);
-            box-shadow: 0 0 0 3px rgba(30, 129, 187, 0.1);
-        }
-
-        .form-group textarea {
-            height: 120px;
-            resize: vertical;
-        }
-
-        /* === FOOTER === */
+        /* === FOOTER (SAME FOR ALL PAGES) === */
         footer {
             background: var(--deep-blue);
             color: white;
@@ -469,7 +301,6 @@
 
         .footer-col h4 {
             margin-bottom: 25px;
-            font-size: 1.2rem;
         }
 
         .footer-col ul {
@@ -483,7 +314,6 @@
         .footer-col ul li a {
             color: #cbd5e0;
             text-decoration: none;
-            transition: color 0.3s;
         }
 
         .footer-col ul li a:hover {
@@ -500,7 +330,6 @@
             color: white;
             font-size: 1.5rem;
             opacity: 0.7;
-            transition: opacity 0.3s;
         }
 
         .social-links a:hover {
@@ -511,16 +340,12 @@
             text-align: center;
             padding-top: 30px;
             border-top: 1px solid rgba(255,255,255,0.1);
-            color: #cbd5e0;
         }
 
         /* === RESPONSIVE === */
         @media (max-width: 1024px) {
+            .services-grid,
             .features-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            
-            .footer-content {
                 grid-template-columns: repeat(2, 1fr);
             }
         }
@@ -541,12 +366,10 @@
                 font-size: 2.5rem;
             }
 
-            .about-grid,
-            .contact-container {
-                grid-template-columns: 1fr;
-            }
-
-            .features-grid {
+            .preview-grid,
+            .services-grid,
+            .features-grid,
+            .footer-content {
                 grid-template-columns: 1fr;
             }
 
@@ -561,28 +384,26 @@
     <header>
         <div class="container">
             <div class="logo">
-                <!-- Replace with your logo path -->
-                <img src="images/logo-carthage.png" alt="Carthage Cloud Solutions">
+                <img src="logo-carthage.png" alt="Carthage Cloud Solutions">
             </div>
             <nav>
                 <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="contact.html">Contact</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
     <main>
-        <!-- HERO SECTION -->
-        <section id="home" class="hero">
+        <section class="hero">
             <div class="container">
                 <div class="hero-content">
                     <h1>Your Trusted Partner in Cloud & Security Excellence</h1>
-                    <p>Microsoft, Cisco & Fortinet certified experts delivering enterprise-grade solutions with 24/7 SOC monitoring and support.</p>
-                    <a href="#contact" class="btn btn-primary">Start Your Journey</a>
+                    <p>Microsoft, Cisco & Fortinet certified experts delivering enterprise-grade solutions with 24/7 SOC monitoring.</p>
+                    <a href="services.html" class="btn btn-primary">Explore Our Services</a>
                     <div class="hero-badges">
                         <span><i class="fab fa-microsoft"></i> Microsoft Certified</span>
                         <span><i class="fas fa-shield-alt"></i> Fortinet Expert</span>
@@ -592,238 +413,88 @@
             </div>
         </section>
 
-        <!-- ABOUT SECTION -->
-        <section id="about" class="about">
+        <section class="about-preview">
             <div class="container">
-                <div class="about-grid">
-                    <div class="about-text">
+                <div class="preview-grid">
+                    <div class="preview-text">
                         <h2>We Are Carthage Cloud Solutions</h2>
                         <p>A team of passionate, certified experts dedicated to transforming businesses through innovative technology. With deep expertise across Microsoft, Cisco, and Fortinet stacks, we deliver comprehensive IT solutions that drive growth and security.</p>
-                        <p>Our approach combines technical excellence with business understanding, ensuring every solution we build delivers real value.</p>
-                        <div class="cert-grid">
-                            <div class="cert-item"><i class="fab fa-microsoft"></i> Microsoft Certified</div>
-                            <div class="cert-item"><i class="fas fa-cloud"></i> Azure Expert</div>
-                            <div class="cert-item"><i class="fas fa-shield-alt"></i> Fortinet NSE</div>
-                            <div class="cert-item"><i class="fas fa-network-wired"></i> Cisco CCNP</div>
+                        <div class="cert-badges">
+                            <span class="cert-badge"><i class="fab fa-microsoft"></i> Microsoft</span>
+                            <span class="cert-badge"><i class="fas fa-shield-alt"></i> Fortinet</span>
+                            <span class="cert-badge"><i class="fas fa-network-wired"></i> Cisco</span>
                         </div>
+                        <a href="about.html" class="service-link" style="margin-top: 20px;">Learn more about us <i class="fas fa-arrow-right"></i></a>
                     </div>
-                    <div class="stats-grid">
-                        <div class="stat-card">
-                            <div class="stat-number">50+</div>
-                            <div class="stat-label">Enterprise Clients</div>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                        <div style="background: white; padding: 30px; border-radius: 12px; text-align: center;">
+                            <div style="font-size: 2.5rem; color: var(--ocean-blue);">50+</div>
+                            <div>Enterprise Clients</div>
                         </div>
-                        <div class="stat-card">
-                            <div class="stat-number">24/7</div>
-                            <div class="stat-label">SOC Monitoring</div>
-                        </div>
-                        <div class="stat-card">
-                            <div class="stat-number">15+</div>
-                            <div class="stat-label">Services</div>
-                        </div>
-                        <div class="stat-card">
-                            <div class="stat-number">100%</div>
-                            <div class="stat-label">Project Success</div>
+                        <div style="background: white; padding: 30px; border-radius: 12px; text-align: center;">
+                            <div style="font-size: 2.5rem; color: var(--ocean-blue);">24/7</div>
+                            <div>SOC Support</div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- SERVICES SECTION -->
-        <section id="services" class="services">
+        <section class="services-preview">
             <div class="container">
-                <h2 class="section-title">Our Services</h2>
-                <p class="section-subtitle">End-to-end IT solutions backed by certified expertise and 24/7 support</p>
+                <h2 class="section-title">Our Core Services</h2>
+                <p class="section-subtitle">End-to-end IT solutions backed by certified expertise</p>
                 
                 <div class="services-grid">
-                    <!-- Service 1: Cloud & Infrastructure -->
                     <div class="service-card">
-                        <div class="service-icon">
-                            <i class="fas fa-cloud-upload-alt"></i>
-                        </div>
-                        <h3>Cloud & Hybrid Infrastructure</h3>
-                        <ul class="service-tech">
-                            <li><i class="fas fa-check-circle"></i> Microsoft Azure Architecture</li>
-                            <li><i class="fas fa-check-circle"></i> Azure Stack HCI (Hybrid Cloud)</li>
-                            <li><i class="fas fa-check-circle"></i> Windows Server & Active Directory</li>
-                            <li><i class="fas fa-check-circle"></i> Migration & Modernization</li>
-                        </ul>
-                        <div class="service-projects">
-                            <h4>Featured Projects:</h4>
-                            <span class="project-tag">Azure HCI for Healthcare</span>
-                            <span class="project-tag">Multi-cloud Migration</span>
-                            <span class="project-tag">DR Solution Design</span>
-                        </div>
+                        <div class="service-icon"><i class="fas fa-cloud-upload-alt"></i></div>
+                        <h3>Cloud & Infrastructure</h3>
+                        <p>Azure, HCI, Windows Server, Hybrid Solutions</p>
+                        <a href="services.html#cloud" class="service-link">Learn more <i class="fas fa-arrow-right"></i></a>
                     </div>
-
-                    <!-- Service 2: Cybersecurity & SOC -->
                     <div class="service-card">
-                        <div class="service-icon">
-                            <i class="fas fa-shield-alt"></i>
-                        </div>
-                        <h3>Cybersecurity & SOC 24/7</h3>
-                        <ul class="service-tech">
-                            <li><i class="fas fa-check-circle"></i> Microsoft Sentinel & XDR</li>
-                            <li><i class="fas fa-check-circle"></i> Fortinet FortiGate & Solutions</li>
-                            <li><i class="fas fa-check-circle"></i> 24/7 SOC Monitoring</li>
-                            <li><i class="fas fa-check-circle"></i> Microsoft Defender Suite</li>
-                        </ul>
-                        <div class="service-projects">
-                            <h4>Featured Projects:</h4>
-                            <span class="project-tag">Banking SOC Implementation</span>
-                            <span class="project-tag">Fortinet NGFW Deployment</span>
-                            <span class="project-tag">XDR Rollout Enterprise</span>
-                        </div>
+                        <div class="service-icon"><i class="fas fa-shield-alt"></i></div>
+                        <h3>Cybersecurity & SOC</h3>
+                        <p>Sentinel, XDR, Defender, Fortinet, 24/7 Monitoring</p>
+                        <a href="services.html#security" class="service-link">Learn more <i class="fas fa-arrow-right"></i></a>
                     </div>
-
-                    <!-- Service 3: Microsoft 365 & Productivity -->
                     <div class="service-card">
-                        <div class="service-icon">
-                            <i class="fab fa-microsoft"></i>
-                        </div>
-                        <h3>Microsoft 365 & Collaboration</h3>
-                        <ul class="service-tech">
-                            <li><i class="fas fa-check-circle"></i> M365 Deployment & Migration</li>
-                            <li><i class="fas fa-check-circle"></i> Advanced Troubleshooting</li>
-                            <li><i class="fas fa-check-circle"></i> Identity & Access Management</li>
-                            <li><i class="fas fa-check-circle"></i> Teams & SharePoint Solutions</li>
-                        </ul>
-                        <div class="service-projects">
-                            <h4>Featured Projects:</h4>
-                            <span class="project-tag">M365 Migration 2000 Users</span>
-                            <span class="project-tag">Teams Enterprise Voice</span>
-                            <span class="project-tag">Security & Compliance Setup</span>
-                        </div>
+                        <div class="service-icon"><i class="fab fa-microsoft"></i></div>
+                        <h3>Microsoft 365</h3>
+                        <p>Deployment, Troubleshooting, Security</p>
+                        <a href="services.html#m365" class="service-link">Learn more <i class="fas fa-arrow-right"></i></a>
                     </div>
-
-                    <!-- Service 4: Cisco Networking -->
-                    <div class="service-card">
-                        <div class="service-icon">
-                            <i class="fas fa-network-wired"></i>
-                        </div>
-                        <h3>Cisco Networking & Connectivity</h3>
-                        <ul class="service-tech">
-                            <li><i class="fas fa-check-circle"></i> Cisco Enterprise Infrastructure</li>
-                            <li><i class="fas fa-check-circle"></i> Meraki WiFi Solutions</li>
-                            <li><i class="fas fa-check-circle"></i> SD-WAN Implementation</li>
-                            <li><i class="fas fa-check-circle"></i> Enterprise ID & Access</li>
-                        </ul>
-                        <div class="service-projects">
-                            <h4>Featured Projects:</h4>
-                            <span class="project-tag">Campus WiFi Overhaul</span>
-                            <span class="project-tag">SD-WAN Multi-site</span>
-                            <span class="project-tag">Cisco DNA Center</span>
-                        </div>
-                    </div>
-
-                    <!-- Service 5: Automation & RPA -->
-                    <div class="service-card">
-                        <div class="service-icon">
-                            <i class="fas fa-robot"></i>
-                        </div>
-                        <h3>Automation & Power Platform</h3>
-                        <ul class="service-tech">
-                            <li><i class="fas fa-check-circle"></i> Power Automate (RPA)</li>
-                            <li><i class="fas fa-check-circle"></i> Power Apps Development</li>
-                            <li><i class="fas fa-check-circle"></i> Power BI Analytics</li>
-                            <li><i class="fas fa-check-circle"></i> Process Optimization</li>
-                        </ul>
-                        <div class="service-projects">
-                            <h4>Featured Projects:</h4>
-                            <span class="project-tag">Invoice Automation RPA</span>
-                            <span class="project-tag">Power BI Executive Dashboard</span>
-                            <span class="project-tag">HR Workflow Automation</span>
-                        </div>
-                    </div>
-
-                    <!-- Service 6: Azure Hybrid & HCI -->
-                    <div class="service-card">
-                        <div class="service-icon">
-                            <i class="fas fa-server"></i>
-                        </div>
-                        <h3>Azure Hybrid & HCI Solutions</h3>
-                        <ul class="service-tech">
-                            <li><i class="fas fa-check-circle"></i> Azure Stack HCI</li>
-                            <li><i class="fas fa-check-circle"></i> Hybrid Connectivity</li>
-                            <li><i class="fas fa-check-circle"></i> Azure Arc Management</li>
-                            <li><i class="fas fa-check-circle"></i> VDI Solutions</li>
-                        </ul>
-                        <div class="service-projects">
-                            <h4>Featured Projects:</h4>
-                            <span class="project-tag">HCI for Manufacturing</span>
-                            <span class="project-tag">Azure Arc Implementation</span>
-                            <span class="project-tag">Disaster Recovery Setup</span>
-                        </div>
-                    </div>
+                </div>
+                
+                <div class="text-center">
+                    <a href="services.html" class="btn btn-primary">View All Services</a>
                 </div>
             </div>
         </section>
 
-        <!-- WHY US SECTION -->
         <section class="why-us">
             <div class="container">
                 <h2 class="section-title">Why Choose Us?</h2>
-                <p class="section-subtitle">We bring together certified expertise and 24/7 commitment to your success</p>
                 <div class="features-grid">
                     <div class="feature">
                         <i class="fas fa-certificate"></i>
                         <h4>Certified Experts</h4>
-                        <p>Microsoft, Cisco & Fortinet certified professionals</p>
+                        <p>Microsoft, Cisco & Fortinet certified</p>
                     </div>
                     <div class="feature">
                         <i class="fas fa-clock"></i>
                         <h4>24/7 SOC & Support</h4>
-                        <p>Round-the-clock monitoring and incident response</p>
+                        <p>Round-the-clock monitoring</p>
                     </div>
                     <div class="feature">
                         <i class="fas fa-layer-group"></i>
                         <h4>End-to-End Solutions</h4>
-                        <p>From networking to cloud to security</p>
+                        <p>Complete IT coverage</p>
                     </div>
                     <div class="feature">
                         <i class="fas fa-handshake"></i>
-                        <h4>Strategic Partnerships</h4>
-                        <p>Preferred partnerships with Microsoft, Cisco, Fortinet</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- CONTACT SECTION -->
-        <section id="contact" class="contact">
-            <div class="container">
-                <div class="contact-container">
-                    <div class="contact-info">
-                        <h3>Let's Build Something Great Together</h3>
-                        <p>Ready to transform your IT infrastructure? Our experts are here to help.</p>
-                        <div class="contact-details">
-                            <p><i class="fas fa-envelope"></i> contact@carthagecloud.com</p>
-                            <p><i class="fas fa-phone"></i> +216 XX XXX XXX</p>
-                            <p><i class="fas fa-map-marker-alt"></i> Tunis, Tunisia</p>
-                            <p><i class="fas fa-clock"></i> 24/7 SOC Support</p>
-                        </div>
-                        <div class="social-links">
-                            <a href="#"><i class="fab fa-linkedin"></i></a>
-                            <a href="#"><i class="fab fa-twitter"></i></a>
-                            <a href="#"><i class="fab fa-github"></i></a>
-                        </div>
-                    </div>
-                    <div class="contact-form">
-                        <form>
-                            <div class="form-group">
-                                <input type="text" placeholder="Your Name" required>
-                            </div>
-                            <div class="form-group">
-                                <input type="email" placeholder="Email Address" required>
-                            </div>
-                            <div class="form-group">
-                                <input type="text" placeholder="Company">
-                            </div>
-                            <div class="form-group">
-                                <textarea placeholder="Tell us about your project..."></textarea>
-                            </div>
-                            <button type="submit" class="btn btn-primary" style="width: 100%;">Send Message</button>
-                        </form>
+                        <h4>Strategic Partners</h4>
+                        <p>Microsoft, Cisco, Fortinet</p>
                     </div>
                 </div>
             </div>
@@ -835,39 +506,35 @@
             <div class="footer-content">
                 <div class="footer-col">
                     <h4>Carthage Cloud Solutions</h4>
-                    <p>Your trusted partner for cloud, security, and digital transformation. Certified experts in Microsoft, Cisco, and Fortinet technologies.</p>
-                </div>
-                <div class="footer-col">
-                    <h4>Services</h4>
-                    <ul>
-                        <li><a href="#">Cloud & Azure</a></li>
-                        <li><a href="#">Cybersecurity & SOC</a></li>
-                        <li><a href="#">Microsoft 365</a></li>
-                        <li><a href="#">Cisco Networking</a></li>
-                        <li><a href="#">Automation & RPA</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>Certifications</h4>
-                    <ul>
-                        <li>Microsoft Certified</li>
-                        <li>Cisco Certified</li>
-                        <li>Fortinet NSE</li>
-                        <li>Azure Expert</li>
-                    </ul>
+                    <p>Your trusted partner for cloud, security, and digital transformation.</p>
                 </div>
                 <div class="footer-col">
                     <h4>Quick Links</h4>
                     <ul>
-                        <li><a href="#about">About Us</a></li>
-                        <li><a href="#services">Services</a></li>
-                        <li><a href="#contact">Contact</a></li>
-                        <li><a href="#">Careers</a></li>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="services.html#cloud">Cloud & Azure</a></li>
+                        <li><a href="services.html#security">Cybersecurity</a></li>
+                        <li><a href="services.html#m365">Microsoft 365</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li>contact@carthagecloud.com</li>
+                        <li>Tunis, Tunisia</li>
                     </ul>
                 </div>
             </div>
             <div class="copyright">
-                <p>&copy; 2024 Carthage Cloud Solutions. All rights reserved. Built by certified experts.</p>
+                <p>&copy; 2024 Carthage Cloud Solutions. All rights reserved.</p>
             </div>
         </div>
     </footer>
