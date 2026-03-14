@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Carthage Cloud Solutions · 24/7 SOC</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      background-color: #f8faff;
+      color: #13294e;
+      line-height: 1.5;
+    }
+
+    :root {
+      --primary: #0a3b7a;
+      --primary-light: #2b5faa;
+      --primary-soft: #e1ebff;
+      --accent: #2270c2;
+      --neutral-dark: #1e293b;
+      --neutral-gray: #475569;
+      --bg-light: #f9fcff;
+      --white: #ffffff;
+      --border-light: rgba(10, 59, 122, 0.12);
+      --shadow: 0 20px 30px -10px rgba(0, 37, 79, 0.15);
+      --card-shadow: 0 8px 24px rgba(0, 44, 85, 0.08);
+    }
+
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 1.5rem 2rem 4rem;
+    }
+
+    .logo-area {
+      margin-bottom: 2.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+    }
+
+    .logo-img {
+      height: 60px;
+      width: auto;
+      border-radius: 8px;
+      display: block;
+    }
+
+    .brand-tagline {
+      background: white;
+      padding: 0.5rem 1.5rem;
+      border-radius: 40px;
+      font-weight: 600;
+      color: var(--primary);
+      box-shadow: 0 2px 12px var(--border-light);
+      border: 1px solid rgba(10, 59, 122, 0.2);
+      font-size: 1rem;
+    }
+
+    .brand-tagline i {
+      margin-right: 6px;
+      color: var(--primary-light);
+    }
+
+    .hero {
+      background: linear-gradient(135deg, #f0f6ff 0%, #ffffff 70%);
+      border-radius: 2.5rem;
+      padding: 2.8rem 3rem;
+      margin-bottom: 3rem;
+      border: 1px solid var(--border-light);
+      box-shadow: var(--card-shadow);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::after {
+      content: "🛡️";
+      font-size: 12rem;
+      opacity: 0.03;
+      position: absolute;
+      bottom: -20px;
+      right: 20px;
+      transform: rotate(10deg);
+      pointer-events: none;
+    }
+
+    .badge {
+      display: inline-block;
+      background: var(--primary);
+      color: white;
+      font-weight: 600;
+      font-size: 0.9rem;
+      padding: 0.4rem 1.2rem;
+      border-radius: 40px;
+      letter-spacing: 0.4px;
+      margin-bottom: 1.2rem;
+    }
+
+    h1 {
+      font-size: 3.3rem;
+      font-weight: 800;
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+      color: #09244b;
+      margin-bottom: 1rem;
+    }
+
+    .hero-highlight {
+      color: var(--primary);
+      border-left: 6px solid var(--primary);
+      padding-left: 1.8rem;
+      font-size: 1.3rem;
+      font-weight: 500;
+      margin: 1.5rem 0 2rem;
+      background: rgba(10, 59, 122, 0.02);
+      padding: 1.2rem 1.8rem;
+      border-radius: 0 60px 60px 0;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--primary);
+      color: white;
+      border: none;
+      padding: 1rem 2.2rem;
+      font-weight: 600;
+      font-size: 1.1rem;
+      border-radius: 50px;
+      box-shadow: 0 12px 20px -12px var(--primary);
+      transition: all 0.2s;
+      text-decoration: none;
+    }
+
+    .btn i {
+      font-size: 1.2rem;
+    }
+
+    .btn:hover {
+      background: #0e4b96;
+      transform: translateY(-3px);
+      box-shadow: 0 24px 28px -16px #0a3b7a;
+    }
+
+    .section-title {
+      font-size: 2.2rem;
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+      letter-spacing: -0.01em;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .section-title i {
+      color: var(--primary);
+      font-size: 2rem;
+      background: var(--primary-soft);
+      padding: 0.6rem;
+      border-radius: 20px;
+    }
+
+    .grid-1col {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+      margin-bottom: 3rem;
+    }
+    
+    .grid-2col, .grid-3col {
+      display: grid;
+      gap: 2rem;
+    }
+
+    .grid-2col {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .grid-3col {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .card {
+      background: var(--white);
+      border-radius: 2rem;
+      padding: 2rem 1.8rem;
+      box-shadow: var(--card-shadow);
+      border: 1px solid rgba(10, 59, 122, 0.1);
+      transition: all 0.25s;
+      height: fit-content;
+    }
+
+    .card:hover {
+      transform: scale(1.01);
+      border-color: var(--primary-light);
+      box-shadow: 0 20px 32px -12px rgba(10, 59, 122, 0.2);
+    }
+
+    .icon-badge {
+      background: var(--primary-soft);
+      color: var(--primary);
+      width: 56px;
+      height: 56px;
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .card h3 {
+      font-size: 1.6rem;
+      font-weight: 700;
+      margin-bottom: 1.2rem;
+    }
+
+    .card ul {
+      list-style: none;
+    }
+
+    .card li {
+      margin-bottom: 0.8rem;
+      display: flex;
+      gap: 0.8rem;
+      align-items: flex-start;
+    }
+
+    .card li i {
+      color: var(--primary);
+      font-size: 1.2rem;
+      min-width: 1.5rem;
+      margin-top: 0.2rem;
+    }
+
+    .badge-check {
+      background: #1e8f5e;
+      color: white;
+      border-radius: 40px;
+      padding: 0.3rem 1.2rem;
+      font-size: 0.85rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .certif-item {
+      background: var(--primary-soft);
+      border-radius: 60px;
+      padding: 0.5rem 1.2rem 0.5rem 0.8rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 500;
+      color: var(--primary);
+    }
+
+    .footer-cta {
+      background: linear-gradient(105deg, #092958 0%, #134b9c 100%);
+      border-radius: 3rem;
+      padding: 3.5rem 3rem;
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      margin-top: 3.5rem;
+      box-shadow: var(--shadow);
+    }
+
+    .footer-cta h2 {
+      font-size: 2.2rem;
+      font-weight: 700;
+      margin-bottom: 0.7rem;
+    }
+
+    .footer-cta .btn-light {
+      background: white;
+      color: var(--primary);
+      font-size: 1.3rem;
+      padding: 1.2rem 2.8rem;
+      border-radius: 60px;
+      font-weight: 700;
+      box-shadow: 0 12px 20px -10px rgba(0,0,0,0.3);
+      transition: all 0.2s;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .footer-cta .btn-light:hover {
+      background: #eef4ff;
+      transform: scale(1.02);
+    }
+
+    .tech-strip {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem 2rem;
+      margin: 2rem 0;
+    }
+
+    .tech-item {
+      background: white;
+      border-radius: 40px;
+      padding: 0.5rem 1.5rem 0.5rem 1.2rem;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.02);
+      font-weight: 500;
+      border: 1px solid var(--border-light);
+      color: var(--neutral-dark);
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .tech-item i {
+      color: var(--primary);
+    }
+
+    hr {
+      border: none;
+      height: 1px;
+      background: linear-gradient(to right, transparent, var(--border-light), transparent);
+      margin: 2rem 0;
+    }
+
+    @media (max-width: 800px) {
+      .container { padding: 1rem 1.5rem 3rem; }
+      h1 { font-size: 2.5rem; }
+      .grid-2col, .grid-3col { grid-template-columns: 1fr; }
+      .hero { padding: 2rem 1.5rem; }
+      .footer-cta { flex-direction: column; text-align: center; gap: 2rem; }
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <div class="logo-area">
+    <img src="images/logo-sc.png" alt="Carthage Cloud Solutions" class="logo-img">
+    <div class="brand-tagline">
+      <i class="fas fa-clock"></i> 24/7 SOC · monitoring · incident response
+    </div>
+  </div>
+
+  <div class="hero">
+    <div class="badge"><i class="fas fa-shield-alt" style="margin-right: 8px;"></i>🛡️ Carthage Cloud Solutions SC</div>
+    <h1>24/7 Security Operations Center<br><span style="color: var(--primary);">SOC Monitoring Service</span></h1>
+    <div class="hero-highlight">
+      <i class="fas fa-shield-hal" style="margin-right: 12px;"></i> Protecting Your Business from Modern Cyber Threats
+    </div>
+    <p style="font-size: 1.2rem; max-width: 70%; margin-bottom: 2.5rem; color: var(--neutral-gray);">
+      Real‑time detection, analysis, and response — our experts monitor your infrastructure with Microsoft Sentinel, Defender XDR, and FortiGate.
+    </p>
+    <a href="#" class="btn"><i class="fas fa-envelope"></i> Contact SOC team</a>
+  </div>
+
+  <div class="grid-1col">
+    <div class="card">
+      <div class="icon-badge"><i class="fas fa-eye"></i></div>
+      <h3>🚨 What Our SOC Does</h3>
+      <ul>
+        <li><i class="fas fa-check-circle"></i> <strong>24/7 Monitoring</strong> – continuous surveillance of security events, logs, and alerts.</li>
+        <li><i class="fas fa-bug"></i> <strong>Threat Detection</strong> – external scans, brute force, malware, lateral movement, suspicious authentications.</li>
+        <li><i class="fas fa-microscope"></i> <strong>Incident Investigation</strong> – using Microsoft Sentinel, Defender for Endpoint, Office 365, Cloud Apps, FortiGate logs.</li>
+        <li><i class="fas fa-file-alt"></i> <strong>Incident Reporting</strong> – executive summary, technical analysis, impact assessment, actions taken, security recommendations.</li>
+      </ul>
+      <div style="margin-top: 2rem; background: var(--primary-soft); border-radius: 1.5rem; padding: 1.5rem;">
+        <span class="badge-check"><i class="fas fa-check"></i> certified analysis</span>
+        <p style="margin-top: 0.8rem; color: var(--neutral-dark);"><i class="fas fa-quote-right" style="opacity: 0.6;"></i> We turn raw alerts into decisive actions.</p>
+      </div>
+    </div>
+  </div>
+
+  <div>
+    <div class="section-title"><i class="fas fa-microchip"></i> 🔧 Technologies We Use</div>
+    <div class="tech-strip">
+      <span class="tech-item"><i class="fas fa-cloud"></i> Microsoft Sentinel (SIEM)</span>
+      <span class="tech-item"><i class="fas fa-shield"></i> Microsoft Defender XDR</span>
+      <span class="tech-item"><i class="fas fa-laptop"></i> Defender for Endpoint</span>
+      <span class="tech-item"><i class="fas fa-envelope"></i> Defender for Office 365</span>
+      <span class="tech-item"><i class="fas fa-cubes"></i> Defender for Cloud Apps</span>
+      <span class="tech-item"><i class="fas fa-mobile-alt"></i> Microsoft Intune</span>
+      <span class="tech-item"><i class="fas fa-fire"></i> FortiGate Firewall</span>
+    </div>
+  </div>
+
+  <hr>
+
+  <div>
+    <div class="section-title"><i class="fas fa-sliders"></i> ⚙️ SOC Capabilities</div>
+    <div class="grid-3col" style="margin-bottom: 2rem;">
+      <div class="card" style="padding: 1.8rem;">
+        <i class="fas fa-chart-line" style="font-size: 2.2rem; color: var(--primary); margin-bottom: 1rem;"></i>
+        <h4 style="font-size: 1.3rem;">✔ SIEM Monitoring</h4>
+      </div>
+      <div class="card" style="padding: 1.8rem;">
+        <i class="fas fa-desktop" style="font-size: 2.2rem; color: var(--primary); margin-bottom: 1rem;"></i>
+        <h4 style="font-size: 1.3rem;">✔ Endpoint Detection & Response (EDR)</h4>
+      </div>
+      <div class="card" style="padding: 1.8rem;">
+        <i class="fas fa-diagram-project" style="font-size: 2.2rem; color: var(--primary); margin-bottom: 1rem;"></i>
+        <h4 style="font-size: 1.3rem;">✔ Log Analysis & Correlation</h4>
+      </div>
+      <div class="card" style="padding: 1.8rem;">
+        <i class="fas fa-bullseye" style="font-size: 2.2rem; color: var(--primary); margin-bottom: 1rem;"></i>
+        <h4 style="font-size: 1.3rem;">✔ Threat Hunting</h4>
+      </div>
+      <div class="card" style="padding: 1.8rem;">
+        <i class="fas fa-flask" style="font-size: 2.2rem; color: var(--primary); margin-bottom: 1rem;"></i>
+        <h4 style="font-size: 1.3rem;">✔ Incident Investigation</h4>
+      </div>
+      <div class="card" style="padding: 1.8rem;">
+        <i class="fas fa-list-check" style="font-size: 2.2rem; color: var(--primary); margin-bottom: 1rem;"></i>
+        <h4 style="font-size: 1.3rem;">✔ Security Recommendations</h4>
+      </div>
+      <div class="card" style="padding: 1.8rem;">
+        <i class="fas fa-cloud-sun" style="font-size: 2.2rem; color: var(--primary); margin-bottom: 1rem;"></i>
+        <h4 style="font-size: 1.3rem;">✔ Cloud Security Monitoring</h4>
+      </div>
+      <div class="card" style="padding: 1.8rem;">
+        <i class="fas fa-id-card" style="font-size: 2.2rem; color: var(--primary); margin-bottom: 1rem;"></i>
+        <h4 style="font-size: 1.3rem;">✔ Identity Threat Detection</h4>
+      </div>
+    </div>
+  </div>
+
+  <div class="grid-2col" style="margin: 2rem 0 2.5rem;">
+    <div class="card">
+      <div class="icon-badge"><i class="fas fa-certificate"></i></div>
+      <h3>🎓 Certifications & Expertise</h3>
+      <div style="display: flex; flex-wrap: wrap; gap: 0.8rem;">
+        <span class="certif-item"><i class="fab fa-microsoft"></i> SC-200</span>
+        <span class="certif-item"><i class="fab fa-microsoft"></i> MS-102</span>
+        <span class="certif-item"><i class="fab fa-microsoft"></i> AZ-104</span>
+        <span class="certif-item"><i class="fas fa-shield"></i> Fortinet NSE 4</span>
+      </div>
+      <p style="margin-top: 1.8rem;">Our team holds Microsoft Security and Fortinet certifications, ensuring best‑in‑class incident response and cloud security.</p>
+    </div>
+
+    <div class="card">
+      <div class="icon-badge"><i class="fas fa-globe"></i></div>
+      <h3>🌍 Why Choose Carthage Cloud</h3>
+      <ul>
+        <li><i class="fas fa-clock"></i> 24/7 security monitoring</li>
+        <li><i class="fas fa-cloud"></i> Cloud‑native SIEM expertise (Microsoft Sentinel)</li>
+        <li><i class="fas fa-shield-heart"></i> Microsoft Security stack specialists</li>
+        <li><i class="fas fa-bolt"></i> Fast incident response</li>
+        <li><i class="fas fa-chart-pie"></i> Detailed security reporting</li>
+        <li><i class="fas fa-building"></i> Scalable SOC for SMB & enterprises</li>
+      </ul>
+    </div>
+  </div>
+
+  <div style="background: white; border-radius: 2rem; padding: 2rem; border: 1px solid var(--border-light);">
+    <div class="section-title" style="margin-bottom: 0.5rem;"><i class="fas fa-briefcase"></i> 🤝 Industries We Support</div>
+    <div style="display: flex; flex-wrap: wrap; gap: 0.8rem 1.8rem; margin-top: 1.5rem;">
+      <span><i class="fas fa-building-columns" style="color: var(--primary);"></i> Financial Services</span>
+      <span><i class="fas fa-hospital" style="color: var(--primary);"></i> Healthcare</span>
+      <span><i class="fas fa-landmark" style="color: var(--primary);"></i> Government</span>
+      <span><i class="fas fa-code" style="color: var(--primary);"></i> SaaS Companies</span>
+      <span><i class="fas fa-cart-shopping" style="color: var(--primary);"></i> E-Commerce</span>
+      <span><i class="fas fa-network-wired" style="color: var(--primary);"></i> Managed IT Providers</span>
+    </div>
+  </div>
+
+  <div class="footer-cta">
+    <div>
+      <h2>📩 Get Started</h2>
+      <p style="font-size: 1.2rem; opacity: 0.9; max-width: 600px;">Protect your organization with 24/7 SOC monitoring and threat detection.<br>Partner with Carthage Cloud Solutions SC to strengthen your cybersecurity posture.</p>
+      <div style="margin-top: 1rem;">
+        <i class="fas fa-shield-check" style="margin-right: 15px;"></i> Your trusted partner in cyber defense.
+      </div>
+    </div>
+    <div>
+      <a href="#" class="btn-light"><i class="fas fa-envelope-open-text"></i> Contact us today</a>
+      <div style="margin-top: 1rem; font-size: 1rem;">📧 soc@carthagecloud.tn</div>
+    </div>
+  </div>
+
+  <div style="text-align: center; margin-top: 2.5rem; font-size: 0.9rem; color: var(--neutral-gray);">
+    <i class="fas fa-shield-hal" style="color: var(--primary);"></i> Carthage Cloud Solutions SC · 24/7 SOC monitoring · All rights reserved
+  </div>
+</div>
+</body>
+</html>
